@@ -17,7 +17,7 @@ A GitHub Action for deleting artifacts within the workflow run. This can be usef
 > [!TIP]
 > You can reference the immutable commit SHA, instead of a version, for example.
 > ```yml
-> - uses: geekyeggo/delete-artifact@cebf1829b62492210e06743a18284f2beec9d359 # v6.0.0
+> - uses: geekyeggo/delete-artifact@176a747ab7e287e3ff4787bf8a148716375ca118 # v6.0.0
 > ```
 
 <!-- prettier-ignore-end -->

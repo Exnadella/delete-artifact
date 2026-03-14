@@ -7,17 +7,19 @@ A GitHub Action for deleting artifacts within the workflow run. This can be usef
 
 ## ✅ Compatibility
 
-| `actions/upload-artifact` | `geekyeggo/delete-artifact` |
-| ------------------------- | --------------------------- |
-| `@v1`, `@v2`, `@v3`       | `@v1`, `@v2`                |
-| `@v4`                     | ~~@v4~~, `@v5`              |
+| `geekyeggo/delete-artifact` | `actions/upload-artifact` |
+| --------------------------- | ------------------------- |
+| `@v6`                       | `@v4`, `@v6`              |
+| ~~@v4~~, `@v5`              | `@v4`                     |
+| `@v1`, `@v2`                | `@v1`, `@v2`, `@v3`       |
 
 <!-- prettier-ignore -->
 > [!TIP]
 > You can reference the immutable commit SHA, instead of a version, for example.
 > ```yml
-> - uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
+> - uses: geekyeggo/delete-artifact@cebf1829b62492210e06743a18284f2beec9d359 # v6.0.0
 > ```
+
 <!-- prettier-ignore-end -->
 
 ## ⚡ Usage
@@ -29,17 +31,17 @@ See [action.yml](action.yml)
 ```yml
 steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Create test file
       run: echo hello > test.txt
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v6
       with:
           name: my-artifact
           path: test.txt
 
-    - uses: geekyeggo/delete-artifact@v5
+    - uses: geekyeggo/delete-artifact@v6
       with:
           name: my-artifact
 ```
@@ -48,7 +50,7 @@ steps:
 
 ```yml
 steps:
-    - uses: geekyeggo/delete-artifact@v5
+    - uses: geekyeggo/delete-artifact@v6
       with:
           name: |
               artifact-*
@@ -62,7 +64,7 @@ By default, the action will fail when it was not possible to delete an artifact 
 
 ```yml
 steps:
-    - uses: geekyeggo/delete-artifact@v5
+    - uses: geekyeggo/delete-artifact@v6
       with:
           name: okay-to-keep
           failOnError: false
